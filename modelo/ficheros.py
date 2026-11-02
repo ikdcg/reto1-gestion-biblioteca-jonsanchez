@@ -113,3 +113,39 @@ def socios_con_libros(socios):
             socios_con_prestamos.append(socio)
 
     return socios_con_prestamos
+
+
+# Mostrar todos los libros
+def mostrar_libros(libros):
+    for libro in libros.values():
+        print("Código:", libro.codigo)
+        print("Título:", libro.titulo)
+        print("Autor:", libro.autor)
+        print("Año:", libro.anio)
+        print("Categoría:", libro.categoria)
+        print("--------------------------")
+
+# Mostrar libros disponibles
+def mostrar_libros_disponibles(libros):
+    for libro in libros.values():
+        if libro.esta_disponible():
+            print("Código:", libro.codigo)
+            print("Título:", libro.titulo)
+            print("Autor:", libro.autor)
+            print("--------------------------")
+
+
+def mostrar_socios(socios):
+    for socio in socios.values():
+        print("Código:", socio.codigo)
+        print("Nombre:", socio.nombre)
+        print("Email:", socio.email)
+        print("--------------------------")
+
+def mostrar_socios_con_prestamos(socios):
+    for socio in socios.values():
+        if socio.tiene_libro():
+            print("Código:", socio.codigo)
+            print("Nombre:", socio.nombre)
+            print("Email:", socio.email)
+            print("--------------------------")
