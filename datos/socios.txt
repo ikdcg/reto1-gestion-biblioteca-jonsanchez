@@ -1,0 +1,15 @@
+S001;Lucía Fernández Ruiz;lucia.fernandez@email.com;
+S002;Marc Soler Puig;marc.soler@email.com;L003
+S003;Aitor Etxeberria;aitor.etxeberria@email.com;
+S004;Carmen Ortega Gil;carmen.ortega@email.com;
+S005;Javier Morales Prieto;javier.morales@email.com;L011
+S006;Núria Vidal Roca;nuria.vidal@email.com;
+S007;Pablo Navarro Díaz;pablo.navarro@email.com;L042
+S008;Elena Castro Vega;elena.castro@email.com;
+S009;Iker Mendizábal;iker.mendizabal@email.com;
+S010;Sofía Romero Lara;sofia.romero@email.com;L071
+S011;David Herrera Cano;david.herrera@email.com;
+S012;Laia Ferrer Mas;laia.ferrer@email.com;
+S013;Andrea Molina Ríos;andrea.molina@email.com;
+S014;Unai Garmendia;unai.garmendia@email.com;
+S015;Marta Iglesias Sanz;marta.iglesias@email.com;
