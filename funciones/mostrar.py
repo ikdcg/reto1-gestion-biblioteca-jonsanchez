@@ -29,10 +29,11 @@ def mostrar_socios(socios):
         print("--------------------------")
 
 #Mostrar socios con prestamos
-def mostrar_socios_con_prestamos(socios):
+def mostrar_socios_con_prestamos(libros,socios):
     for socio in socios.values():
         if socio.tiene_libro():
-            print("Libro prestado:", socio.codigo_libro)
+            libro = libros[socio.codigo_libro]
+            print("Libro prestado:", libro.titulo)
             print("Código:", socio.codigo)
             print("Nombre:", socio.nombre)
             print("Email:", socio.email)
