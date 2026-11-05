@@ -14,6 +14,9 @@ def cargar_libros(ruta):
             if linea:
                 codigo, titulo, autor, anio, categoria, codigo_socio = linea.split(";")
 
+                codigo = codigo.strip()
+                codigo_socio = codigo_socio.strip()
+
                 if codigo_socio == "":
                     codigo_socio = None
 
@@ -35,6 +38,9 @@ def cargar_socios(ruta):
 
             if linea:
                 codigo, nombre, email, codigo_libro = linea.split(";")
+
+                codigo = codigo.strip()
+                codigo_libro = codigo_libro.strip()
 
                 if codigo_libro == "":
                     codigo_libro = None

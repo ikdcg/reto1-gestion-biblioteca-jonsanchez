@@ -1,5 +1,7 @@
 from modelo.libro import Libro
 from modelo.socio import Socio
+from funciones.registro import registrar_evento
+
 
 # Devolver un libro
 def devolver_libro(libros, socios, codigo_socio):
@@ -21,3 +23,8 @@ def devolver_libro(libros, socios, codigo_socio):
     socio.codigo_libro = None
 
     print("Libro devuelto correctamente.")
+
+    registrar_evento(
+        "DEVOLUCION",
+        f"Libro {codigo_libro} devuelto por socio {codigo_socio}"
+    )
