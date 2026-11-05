@@ -2,6 +2,7 @@ from modelo.libro import Libro
 from modelo.socio import Socio
 
 
+# Cargar los libros
 def cargar_libros(ruta):
 
     libros = {}
@@ -55,7 +56,7 @@ def guardar_libros(ruta, libros):
             if codigo_socio is None:
                 codigo_socio = ""
 
-            linea = f"{libro.codigo};{libro.titulo};{libro.autor};{libro.anio};{libro.categoria};{codigo_socio}\n"
+            linea = f"{libro.codigo};{libro.titulo};{libro.autor};{libro.anio};{libro.categoria};{codigo_socio}"
 
             f.write(linea)
 
@@ -96,6 +97,7 @@ def anadir_socio(socios, socio):
         print("Socio añadido correctamente.")
 
 
+#Buscar libro
 def buscar_libros(libros, titulo_buscar):
     encontrados = []
 
@@ -105,6 +107,7 @@ def buscar_libros(libros, titulo_buscar):
 
     return encontrados
 
+#Buscar socio
 def socios_con_libros(socios):
     socios_con_prestamos = []
 
@@ -134,7 +137,7 @@ def mostrar_libros_disponibles(libros):
             print("Autor:", libro.autor)
             print("--------------------------")
 
-
+#Mostrar todos los socios
 def mostrar_socios(socios):
     for socio in socios.values():
         print("Código:", socio.codigo)
@@ -142,10 +145,40 @@ def mostrar_socios(socios):
         print("Email:", socio.email)
         print("--------------------------")
 
+#Mostrar socios con prestamos
 def mostrar_socios_con_prestamos(socios):
     for socio in socios.values():
         if socio.tiene_libro():
+            print("Libro prestado:", socio.codigo_libro)
             print("Código:", socio.codigo)
             print("Nombre:", socio.nombre)
             print("Email:", socio.email)
             print("--------------------------")
+
+
+#Prestar un libro a un socio
+def prestar_libro(libros, socios, codigo_libro, codigo_socio):
+
+    if codigo_libro not in libros:
+        print("El libro no existe")
+        return
+    
+    if codigo_socio not in socios:
+        print ("El socio no existe")
+        return
+    
+    libro=libros[codigo_libro]
+    socio=socios[codigo_socio]
+
+    if socio.tiene_libro():
+        print("El socio ya tiene un libro prestado")
+        return
+    
+    if libro.esta_disponible():
+        print("El libro ya esta prestado")
+        return
+    
+    libro.codigo_socio = codigo_socio
+    socio.codigo_libro = codigo_libro
+
+    print("Préstamo realizado correctamente.")
