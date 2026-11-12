@@ -37,3 +37,5 @@ def prestar_libro(libros, socios, codigo_libro, codigo_socio):
         "PRESTAMO",
         f"Libro {codigo_libro} prestado al socio {codigo_socio}"
     )
+
+    

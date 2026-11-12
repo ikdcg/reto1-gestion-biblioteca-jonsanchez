@@ -6,3 +6,4 @@ def registrar_evento(evento, detalles):
 
     with open("log.txt", "a", encoding="utf-8") as archivo:
         archivo.write(f"[{fecha}][{evento}][{detalles}]\n")
+registrar_evento("USUARIO", "El usuario ha iniciado el programa")
