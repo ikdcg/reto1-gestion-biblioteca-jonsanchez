@@ -13,7 +13,7 @@ def guardar_libros(ruta, libros):
             if codigo_socio is None:
                 codigo_socio = ""
 
-            linea = f"{libro.codigo};{libro.titulo};{libro.autor};{libro.anio};{libro.categoria};{codigo_socio}"
+            linea = f"{libro.codigo};{libro.titulo};{libro.autor};{libro.anio};{libro.categoria};{codigo_socio}\n"
 
             f.write(linea)
 

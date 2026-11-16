@@ -102,8 +102,8 @@ while opcion != "9":
             print("Opción no válida.")
         
     elif opcion == "9":
-        guardar_libros(libros, "datos/libros.txt")
-        guardar_socios(socios, "datos/socios.txt")
+        guardar_libros("datos/libros.txt",libros)
+        guardar_socios("datos/socios.txt",socios)
 
         print("Datos guardados correctamente.")
         print("¡Hasta pronto!")
