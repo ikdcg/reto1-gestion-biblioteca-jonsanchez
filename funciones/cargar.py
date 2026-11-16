@@ -3,6 +3,7 @@ from modelo.socio import Socio
 
 
 # Cargar los libros
+
 def cargar_libros(ruta):
 
     libros = {}
@@ -12,19 +13,28 @@ def cargar_libros(ruta):
             linea = linea.strip()
 
             if linea:
-                codigo, titulo, autor, anio, categoria, codigo_socio = linea.split(";")
+                datos = linea.split(";")
 
-                codigo = codigo.strip()
-                codigo_socio = codigo_socio.strip()
+                codigo, titulo, autor, anio, categoria = datos[:5]
 
-                if codigo_socio == "":
-                    codigo_socio = None
+                codigo_socio = None
 
-                libro = Libro(codigo, titulo, autor, anio, categoria, codigo_socio)
+                if len(datos) == 6 and datos[5].strip():
+                    codigo_socio = datos[5].strip()
 
-                libros[codigo] = libro
+                libro = Libro(
+                    codigo.strip(),
+                    titulo.strip(),
+                    autor.strip(),
+                    anio.strip(),
+                    categoria.strip(),
+                    codigo_socio
+                )
+
+                libros[codigo.strip()] = libro
 
     return libros
+
 
 
 # Cargar los socios
